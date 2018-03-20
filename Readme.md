@@ -58,11 +58,13 @@ Such file can be obtained from `lkgen` or from running `complete`.
 Edit files `02.interval_iteration.sh` and  `03.rhomap_iteration.sh` 
 in `02-scripts`
 
-to choose appropriate MCMC length, etc. 
+to choose appropriate MCMC length, and other relevand parameters. 
 
 
 Then edit files
+
 `02-scripts/graham_cedar/04.interval_parallel_NC_arg.sh` and 
+
 `02-scripts/graham_cedar/05.rhomap_parallel_NC_arg.sh`
 
 to match your cluster requirement end run the script
