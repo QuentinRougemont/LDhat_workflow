@@ -36,7 +36,7 @@ do
 	cd  chromo."$i"/02-LDHAT_maf/  
 	
 	seqid=$(ls -1 batch_1.dataset.*/*sites |wc -l )	
-	seq $seqid |parallel -j $NCPUS ../../02.interval_iteration.sh
+	seq $seqid |parallel -j $NCPUS ../../02-scripts/02.interval_iteration.sh
 	
 	cd ../../  
 done 
