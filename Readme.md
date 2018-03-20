@@ -2,9 +2,9 @@
 
 # Purpose:
 
-simple pipeline to run **LDhat** and estimates variable recombination rates
+Simple pipeline to run **LDhat** and estimates variable recombination rates
 
-to obtain realistic results the pipeline simply splits whole genome data into
+To obtain realistic results the pipeline simply splits whole genome data into
 small chunk of 2,000 - 5,000 SNPs before runnig the different program from LDhat 
 
 ## Dependencies:
@@ -21,7 +21,13 @@ small chunk of 2,000 - 5,000 SNPs before runnig the different program from LDhat
 
 ```bash
 
-cd ../
+#ldhat:
+
+make
+
+#then add path to bashrc or cp to bin
+
+#vcftools
 git clone https://github.com/vcftools/vcftools.git
 ./autogen.sh
 ./configure --prefix=/path/to/vcftools/
