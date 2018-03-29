@@ -1,13 +1,13 @@
 # Quick and dirty pipeline for running LDhat.
 
-# Purpose:
+# Purpose
 
-Simple pipeline to run **LDhat** and estimates variable recombination rates
+Simple pipeline to run **LDhat** and estimate variable recombination rates
 
-To obtain realistic results the pipeline simply splits whole genome data into
-small chunk of 2,000 - 5,000 SNPs before runnig the different program from LDhat 
+To obtain realistic results, the pipeline splits whole genome data into
+small chunk of 2,000 - 5,000 SNPs before running the different programs from LDhat 
 
-## Dependencies:
+## Dependencies
 
 **LDhat** available [here](https://github.com/auton1/LDhat)
 
@@ -38,10 +38,10 @@ make install
 
 ```
 
-## Running the pipeline:
+## Running the pipeline
 
-input needed: vcffile splitted by populations.
-vcffile should be stored in `00-data` and named as follows:
+input needed: vcf file split by populations.
+vcf file should be stored in `00-data` and named as follows:
 batch."$pop".recode.vcf where "$pop" is the name of the target population
 
 to create input files:
@@ -53,7 +53,7 @@ first make sure you have an appropriate lk file.
 
 Such file can be obtained from `lkgen` or from running `complete`.
 
-### Setting LDhat parameters:
+### Setting LDhat parameters
 
 Edit files `02.interval_iteration.sh` and  `03.rhomap_iteration.sh` 
 in `02-scripts`
@@ -73,6 +73,6 @@ to match your cluster requirement end run the script
 
 
 
-## References:
+## References
 
 A. Auton and G. McVean. [Recombination rate estimation in the presence of hotspots](https://genome.cshlp.org/content/17/8/1219.long). Genome Res., 2007
