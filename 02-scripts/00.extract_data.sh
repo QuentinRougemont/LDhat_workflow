@@ -8,6 +8,7 @@ if [ $# -ne 2 ]; then
     echo "Expecting the following values on the command line, in that order"
     echo "name of the population" #could be replaced by name of the vcf instead
     echo "list of all wanted chromosomes"
+fi
 
 pop=$1
 
