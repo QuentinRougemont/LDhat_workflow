@@ -3,6 +3,11 @@
 #input file = vcftools splitted by chromosome and by population
 #the name of the pop should appears in the vcf name 
 #the name of the chromosome should then appears in second
+if [ $# -ne 2 ]; then
+    echo "USAGE: $0 popname chr_list"
+    echo "Expecting the following values on the command line, in that order"
+    echo "name of the population" #could be replaced by name of the vcf instead
+    echo "list of all wanted chromosomes"
 
 pop=$1
 
@@ -23,10 +28,10 @@ fi
 
 for i in $(cat "$list_chromo" ) ; do 
     mkdir -p "$pop"/chromo."$i"                      
-    vcftools --vcf 00-data/batch."$pop".recode.vcf \ 
-        --chr "$i" \                                 
-        --recode --recode-INFO-all \                 
-        --out "$pop"/chromo."$i"/batch."$pop"."$i"   
+    vcftools --vcf 00-data/batch."$pop".recode.vcf \
+        --chr "$i" \
+        --recode --recode-INFO-all \
+        --out "$pop"/chromo."$i"/batch."$pop"."$i"
 
     vcftools --vcf  "$pop"/chromo."$i"/batch."$pop"."$i".recode.vcf \
     --maf 0.05 \
@@ -47,7 +52,11 @@ do
 
     for j in dataset_* ; 
     do
-        vcftools --vcf "$input" --positions $j --ldhat-geno --chr $i --out batch_1.$j 
+        vcftools --vcf "$input" \
+        --positions $j \
+        --ldhat-geno \
+        --chr $i \
+        --out batch_1.$j 
     done
     cd ../../
 done
