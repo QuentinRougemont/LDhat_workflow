@@ -9,6 +9,7 @@
 ##PBS -m ea 
 
 cd "${PBS_O_WORKDIR}"
+echo "WARNING MAKE SUR TO PROVIDE A LOOKUP TABLE"
 
 list_chromo=chr
 

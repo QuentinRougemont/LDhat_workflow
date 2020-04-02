@@ -15,6 +15,8 @@
 # Move to directory where job was submitted
 cd $SLURM_SUBMIT_DIR
 
+echo "WARNING MAKE SUR TO PROVIDE A LOOKUP TABLE"
+
 list_chromo=$1
 
 if [ -z "$list_chromo" ]
