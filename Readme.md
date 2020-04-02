@@ -69,11 +69,15 @@ Then edit files
 
 to match your cluster requirement end run the script
 
+# Generating a lookup table
+
+* please see very simple example scripts located in `02-scripts/complete/`
+
 #### Please read the manual and LDhat papers before use
 
 #To do:
 * add angsd for estimating theta 
-* add complete script to generate lookup table 
+
 
 
 ## References
