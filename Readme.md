@@ -58,7 +58,7 @@ Such file can be obtained from `lkgen` or from running `complete`.
 Edit files `02.interval_iteration.sh` and  `03.rhomap_iteration.sh` 
 in `02-scripts`
 
-to choose appropriate MCMC length, and other relevand parameters. 
+to choose appropriate MCMC length, and other relevants parameters. 
 
 
 Then edit files
@@ -69,7 +69,7 @@ Then edit files
 
 to match your cluster requirement end run the script
 
-# Generating a lookup table
+## Generating a lookup table
 
 * please see very simple example scripts located in `02-scripts/complete/`
 
