@@ -11,9 +11,11 @@ small chunk of 2,000 - 5,000 SNPs before running the different programs from LDh
 
 **LDhat** available [here](https://github.com/auton1/LDhat)
 
+**bcftools** software available[here](https://samtools.github.io/bcftools/)
+
 **vcftools** software available [here](https://github.com/vcftools/vcftools.git)
 
-**python3.6**
+**python3**
 
 **GNU parallel** (installed by default on most linux cluster)
 
@@ -40,16 +42,14 @@ make install
 
 ## Running the pipeline
 
-input needed: vcf file split by populations.
-vcf file should be stored in `00-data` and named as follows:
-batch."$pop".recode.vcf where "$pop" is the name of the target population
+input needed: vcf file splitted by populations. An example script to split by pop is available in `utility_scripts`
 
 to create input files:
-`./02-script/00-extract_data.sh population_name list_chromosome`
+`./02-script/00-extract_data_bcftools.sh population_name list_chromosome`
 
 #### Running interval and rhomap
 
-first make sure you have an appropriate lk file.
+first make sure you have an appropriate lk file (see manual)
 
 Such file can be obtained from `lkgen` or from running `complete`.
 
@@ -71,6 +71,9 @@ to match your cluster requirement end run the script
 
 #### Please read the manual and LDhat papers before use
 
+#To do:
+* add angsd for estimating theta 
+* add complete script to generate lookup table 
 
 
 ## References
