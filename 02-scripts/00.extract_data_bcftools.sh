@@ -15,6 +15,7 @@ if [ $# -ne 3 ]; then
     echo "name of the vcf (compressed with bgzip and indexed)"
     echo "name of the population"
     echo "list of all wanted chromosomes"
+    echo "example ./02-scripts/00.extract_data_bcftools.sh phased.vcf.gz population1 list_chromosome.txt"
     exit
 fi
 
