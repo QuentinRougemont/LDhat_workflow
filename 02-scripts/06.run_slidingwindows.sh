@@ -23,7 +23,7 @@ echo "compute average rho in windows of $windowsize kb"
 
 cd reshaped
 for i in chromo.* ; do
-    python3 ../02-scripts/sliding_window.py $i $windowsize ${i%.results.txt.gz}.reshaped.$windowsize.kb ;
+    python3 ../02-scripts/utility_scripts/sliding_window.py $i $windowsize ${i%.results.txt.gz}.reshaped.$windowsize.kb ;
 done
 echo "now compressing and reshaping the result"
 

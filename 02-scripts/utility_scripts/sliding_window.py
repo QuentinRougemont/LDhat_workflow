@@ -7,6 +7,15 @@ Usage:
 
 # Modules
 import sys
+import gzip
+
+# Functions
+def myopen(_file, mode="rt"):
+    if _file.endswith(".gz"):
+        return gzip.open(_file, mode=mode)
+
+    else:
+        return open(_file, mode=mode)
 
 # Parsing user input
 try:
@@ -18,7 +27,10 @@ except:
     sys.exit(1)
 
 # Read data
-data = [x.split() for x in open(input_file).readlines()]
+#data = [x.split() for x in open(input_file).readlines()]
+data = [x.split() for x in myopen(input_file).readlines()]
+#print(data)
+#sys.exit(0) 
 
 data_float = []
 for d in data:
@@ -32,7 +44,10 @@ while min_pos < max_pos:
     right = min_pos + window_size
     center = (left + right) / 2.0
     window_data = [x for x in data_float if x[0] >= left and x[0] <= right]
-    average = sum([x[1] for x in window_data]) / len(window_data)
+    try:
+        average = sum([x[1] for x in window_data]) / len(window_data)
+    except ZeroDivisionError: 
+        average = 0
     #print(left, center, right, len(window_data), average, sep="\t")
     print(left, center, right, len(window_data), average, sep="\t",file=open(output_file,"a"))
     
