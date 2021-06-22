@@ -1,15 +1,19 @@
 #!/bin/bash
-#PBS -A ihv-653-aa
-#PBS -N OutputTest
-##PBS -o OutTest.out
-##PBS -e OutTest.err
-#PBS -l walltime=8:00:00
-#PBS -l nodes=1:ppn=8
-#PBS -M quentinrougemont@orange.fr
-##PBS -m ea 
+#SBATCH --time=12:45:00
+#SBATCH --job-name=compress
+#SBATCH --output=compress-%J.out
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=6
 
-cd "${PBS_O_WORKDIR}"
+# Move to directory where job was submitted
+cd $SLURM_SUBMIT_DIR
 
+#load parallel if necessary
+
+find . -type f -name '*.txt' | parallel gzip --best
+
+exit
 for i in $(find . -name "rates.txt") ; do gzip $i ; done
 for i in $(find . -name "bounds.txt") ; do gzip $i ; done
 for i in $(find . -name "type_table.txt") ; do gzip $i ; done
