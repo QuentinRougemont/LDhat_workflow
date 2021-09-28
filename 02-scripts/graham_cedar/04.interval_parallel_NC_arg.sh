@@ -20,20 +20,16 @@ then
 	exit
 fi
 
-BLU='\033[0;34m'
-NC='\033[0m' 
 NCPUS=10
 
 for i in $(cat "$list_chromo")  ;
 do 
-	echo ${BLU}####################################${NC}  
 	echo -e "\tmooving to chomo."$i" folder"  
-	echo ${BLU}####################################${NC} 
 	
 	cd  chromo."$i"/02-LDHAT_maf/  
 	
 	#seqid=$(ls -1 batch_1.dataset.*/*sites |wc -l )	
-	seq $seqid |parallel -j $NCPUS ../../02-scripts/02.interval_iteration.sh
+	#seq $seqid |parallel -j $NCPUS ../../02-scripts/02.interval_iteration.sh
 	ls batch_1.dataset.* -d  |sed 's/batch_1.dataset.//g' > seqid
 	cat $seqid |parallel -j $NCPUS ../../02-scripts/02.interval_iteration.sh
 
