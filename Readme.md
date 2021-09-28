@@ -67,7 +67,7 @@ Then edit files
 
 `02-scripts/graham_cedar/05.rhomap_parallel_NC_arg.sh`
 
-to match your cluster requirement end run the script
+to match your cluster requirement and run the script
 
 ## Generating a lookup table
 
