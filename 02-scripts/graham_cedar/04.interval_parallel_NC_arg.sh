@@ -20,14 +20,15 @@ then
 	exit
 fi
 
-NCPUS=10
+NCPUS=32
 
 for i in $(cat "$list_chromo")  ;
 do 
 	echo -e "\tmooving to chomo."$i" folder"  
 	
 	cd  chromo."$i"/02-LDHAT_maf/  
-	
+
+	rm seqid	
 	#seqid=$(ls -1 batch_1.dataset.*/*sites |wc -l )	
 	#seq $seqid |parallel -j $NCPUS ../../02-scripts/02.interval_iteration.sh
 	ls batch_1.dataset.* -d  |sed 's/batch_1.dataset.//g' > seqid
